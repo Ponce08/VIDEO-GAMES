@@ -7,14 +7,12 @@ const { Videogame } = require('../db');
 
 const getAllVideoGames = async(req, res)=>{
     try {
-        const { name } = req.query;
-        
         //Base de Datos 
-        const gameBDD = await Videogame.findAll({ where:{ name:name } });
+        const gameBDD = await Videogame.findAll();
         
         //API 
         const { data } = await axios.get(`${URL}?key=${DB_API_KEY}`);
-        const findAll = data.results.map((videogame)=>{
+        const gameAPI = data.results.map((videogame)=>{
             return  {
                 id:videogame.id,
                 name:videogame.name,
@@ -23,14 +21,15 @@ const getAllVideoGames = async(req, res)=>{
             }
         })
         
-        const allGames = [...findAll, ...gameBDD];
-        const nameModif = name.toUpperCase();
-
-        const gamesFiltered = allGames.filter((obj)=>{
-            return obj.name.toUpperCase() === nameModif
-        }); 
-
+        const allGames = [...gameAPI, ...gameBDD];
+        
+        const { name } = req.query;
+        
         if(name){
+            const gamesFiltered = allGames.filter((obj)=>{
+                return obj.name.toUpperCase() === name.toUpperCase()
+            }); 
+
             if(gamesFiltered){
                 return res.status(200).json(gamesFiltered);
             }

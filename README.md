@@ -63,6 +63,7 @@ Está permitido, **bajo tu responsabilidad**, actualizar las dependencias a vers
 
 3. En la carpeta **`api`** deberás crear un archivo llamado: **`.env`** que tenga la siguiente forma:
 
+
    ```env
        DB_USER=usuariodepostgres
        DB_PASSWORD=passwordDePostgres
