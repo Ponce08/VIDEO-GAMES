@@ -1,42 +1,59 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@700&family=Kdam+Thmor+Pro&family=Noto+Sans:wght@400;500&display=swap');
+
+*{
+    font-family: 'Noto Sans', sans-serif;
+    margin: 0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.content_app{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.titulo{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 2;
 }
 
-.card {
-  padding: 2em;
+h1{
+    margin-bottom: 20px;
+    font-size: 60px;
+    color: white;
+    text-shadow: 3px 3px black;
 }
 
-.read-the-docs {
-  color: #888;
+button{
+    width: 150px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: aquamarine;
+    background: rgb(29,27,29);
+    background: linear-gradient(323deg, rgba(29,27,29,1) 0%, rgba(20,126,136,1) 100%);
+}
+
+button:hover{
+    cursor: pointer;
+    box-shadow: 0 0 15px aquamarine, 0 0 15px aquamarine, 0 0 15px aquamarine;
+    text-shadow: 3px 3px black;
 }
