@@ -6,7 +6,7 @@ const postGame = async(req, res)=>{
 
         if(name && description && imagen && platforms && fecha_De_Lanzamiento && rating){
             const videogame = await Videogame.create({
-                name, 
+                name:name.toLowerCase(), 
                 description, 
                 imagen,
                 platforms, 

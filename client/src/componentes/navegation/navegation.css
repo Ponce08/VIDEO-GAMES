@@ -1,0 +1,60 @@
+label{
+    border-style: solid;
+    border-color: greenyellow;
+    color:greenyellow;
+    font-family: 'Noto Sans', sans-serif;
+    border-width: 2px;
+
+}
+
+input{
+    border-style: solid;
+    border-color: blue;
+    border-width: 2px;
+}
+
+select{
+    border-style: solid;
+    border-color: blue;
+    border-width: 2px;
+}
+
+.content_search{
+    height: 30px;
+    margin: 33.33px;
+}
+
+.content_filtros{
+    height: 30px;
+    margin: 33.33px;
+}
+
+.button_crear_juego{
+    width: 100px;
+    height: 40px;
+    margin: 30px;
+    margin-right: 150px;
+    border-style: solid;
+    border-color: greenyellow;
+    color:greenyellow;
+    font-family: 'Noto Sans', sans-serif;
+    background:none;
+    cursor: pointer;
+    transition-duration: 0.8s;
+}
+
+.button_crear_juego:hover{
+    transition-duration: 0.4s;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px greenyellow, 0 0 15px greenyellow, 0 0 15px greenyellow;
+    font-weight: bold;
+}
+
+.content_nav{
+    height: 100px;
+    background-image:url('./fondo-nav.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}

@@ -1,17 +1,35 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom'
 import './App.css'
-import video_fondo from './video_fondo.mp4'
+// componentes
+import Welcome from './componentes/welcome/Welcome';
+import Home from './componentes/home/Home';
+import DetailGame from './componentes/detailGame/DetailGame';
+import Form from './componentes/form/Form';
+import Navegation from './componentes/navegation/Navegation';
+
 
 const App =()=> {
+
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+  
   return (
     <div className='content_app'>
-      <div className='titulo'>
-        <h1>Welcome to Ponce_Games</h1>
-        <button>START</button>
-      </div>
-      <div>
-        <video src={video_fondo} muted autoPlay loop type='video/mp4'></video>
-      </div>
+
+    
+      {/* {pathname !== '/' && <Navegation/>} */}
+    
+      
+
+     
+      <Routes>
+        <Route path='/' element={<Welcome/>}/>
+        <Route path='/home' element={<Home/>}/>
+        <Route path='/detail/:id' element={<DetailGame/>}/>
+        <Route path='/form' element={<Form/>}/>
+      </Routes>
+
     
     </div>
   )

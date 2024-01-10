@@ -7,6 +7,7 @@ const { UUID } = require('sequelize');
 
 
 const getById = async(req, res)=>{
+    
     try {
         const { id } = req.params;
         
@@ -14,11 +15,15 @@ const getById = async(req, res)=>{
             const { data } = await axios.get(`${URL}/${id}?key=${DB_API_KEY}`);
 
                 const videoGame = {
-                                    id:data.id,
-                                    name:data.name,
-                                    slug:data.slug,
-                                    rating:data.rating
-                                  };
+                                        id:data.id,
+                                        name:data.name,
+                                        image:data.background_image,
+                                        platforms:data.platforms,
+                                        description:data.description,
+                                        released:data.released,
+                                        rating:data.rating,
+                                        genres:data.genres
+                                  }
 
             return res.status(200).json(videoGame);
             

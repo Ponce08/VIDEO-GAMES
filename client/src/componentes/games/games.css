@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&family=Teko:wght@300&display=swap');
+
+.content_game{
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+    height:auto ;
+    margin: 50px 30px 10px 30px;
+    border-style: solid;
+    border-color: greenyellow;
+    border-width: 1px;
+    cursor: pointer;
+    transition-duration: 0.8s;
+}
+
+.content_game:hover{
+    box-shadow: 0 0 10px greenyellow, 0 0 10px greenyellow, 0 0 10px greenyellow;
+    transition-duration: 0.8s;
+    transform: scale(1.1);
+}
+
+.image_game{
+    width: 200px;
+}
+
+.titulo_game{
+    font-family: 'Rubik Glitch', system-ui;
+    font-family: 'Teko', sans-serif;
+    font-size: 30px;
+    margin: 20px 10px 10px;
+    color: blue;
+    line-height: 30px;
+}
+
+.content_titulo_genres{
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo_genres{
+    font-family: 'Rubik Glitch', system-ui;
+    font-family: 'Teko', sans-serif;
+    color: greenyellow;
+    font-size: 20px;
+    margin: 0 10px;
+    
+}
