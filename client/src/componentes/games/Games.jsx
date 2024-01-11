@@ -9,7 +9,7 @@ const Games = ({id, name, image, genres})=>{
             <img src={image} alt={name} className="image_game"/>
             </Link>
             <div className='content_titulo_genres'>
-                <span className='titulo_genres'>GENRES: {genres}</span>
+                <span className='titulo_genres'>GENEROS: {genres}</span>
             </div>
         </div>
     )

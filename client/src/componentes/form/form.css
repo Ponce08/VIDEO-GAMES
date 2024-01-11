@@ -1,0 +1,106 @@
+
+
+.content_titulo{
+    height: 50px;
+}
+
+.titulo_form{
+    width: 200px;
+    height: 50px;
+    margin: 0;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    font-family: 'Rubik Glitch', system-ui;
+    font-family: 'Teko', sans-serif;
+    font-size: 50px;
+    color: blue;
+    line-height: 30px;
+}
+
+.content_form{
+    background-image: url('./fondo form.jpg');
+    background-size: cover;
+    margin: 80px 100px 70px 70px;
+    width: 1200px;
+    height: 400px;
+    padding: 50px 0 0 0;
+    display: flex;
+    justify-content: center;
+    border-style: solid;
+    border-color: greenyellow;
+    border-width: 2px;
+}
+
+.content_form_1{
+    margin: 50px 50px 0 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.content_form_2{
+    margin: 50px 50px 0 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.label_form{
+    height: 25px;
+    width: 170px;
+    display: inline-block;
+    text-align: center;
+    border-style: solid;
+    border-color: greenyellow;
+    color:greenyellow;
+    font-family: 'Noto Sans', sans-serif;
+    border-width: 2px;
+}
+
+.input_form{
+    margin: 10px 0 20px 0;
+    height: 25px;
+    width: 200px;
+    display: inline;
+    border-style: solid;
+    border-color: blue;
+    border-width: 2px;
+}
+
+.content_description{
+    display: flex;
+    flex-direction: column;
+}
+
+
+textarea{
+    margin: 10px 0 20px 0;
+    height: 100px;
+    width: 370px;
+    display: inline;
+    border-style: solid;
+    border-color: blue;
+    border-width: 2px;
+}
+.content_button{
+    margin: 20px 20px 20px 140px;
+}
+
+.button_form{
+    margin: 0;
+    width: 100px;
+    height: 40px;
+    border-style: solid;
+    border-color: greenyellow;
+    color:greenyellow;
+    font-family: 'Noto Sans', sans-serif;
+    background:none;
+    cursor: pointer;
+    transition-duration: 0.8s;
+}
+
+.button_form:hover{
+    transition-duration: 0.4s;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px greenyellow, 0 0 15px greenyellow, 0 0 15px greenyellow;
+    font-weight: bold;
+}

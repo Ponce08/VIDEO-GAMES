@@ -8,17 +8,17 @@ body{
     flex-wrap: wrap;
 }
 
-.content_button{
-    margin: 50px 200px 50px;
-}
-
 .genres_item{
     margin: 3px 10px;
     color: white;
 }
 
-.button_home{
+.cont_button{
     margin: 20px;
+}
+
+.button_home{
+    margin: 10px;
     height: 50px;
     width: 150px;
     font-size: 20px;

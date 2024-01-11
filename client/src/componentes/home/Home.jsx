@@ -43,7 +43,7 @@ const Home =()=>{
                         />
                     })
                 }
-                    <div className="content_button">
+                    <div className="cont_button">
                         <button className='button_home' onClick={previous_page}>PREV</button>  <button className='button_home' onClick={next_page}>NEXT</button>
                     </div>
                 </div>

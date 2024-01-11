@@ -7,8 +7,6 @@ const { Videogame } = require('../../db');
 
 const gamePage_uno = async(req, res)=>{
     try {
-        //Base de Datos 
-        const gamesBDD = await Videogame.findAll();
         
         // API 
         const { data } = await axios.get(`${URL}?key=${DB_API_KEY}`)
@@ -22,9 +20,8 @@ const gamePage_uno = async(req, res)=>{
         });
 
         const gamesAPI_2 = gamesAPI.slice(0, 15);
-        const allGames = [...gamesAPI_2, ...gamesBDD];
-        
-        return res.status(200).json(allGames);
+    
+        return res.status(200).json(gamesAPI_2);
 
     } catch (error) {
         return res.status(500).send(error.message)

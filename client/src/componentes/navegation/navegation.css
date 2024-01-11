@@ -1,4 +1,5 @@
-label{
+.label_nav{
+    /* width: 200px; */
     border-style: solid;
     border-color: greenyellow;
     color:greenyellow;
@@ -7,13 +8,15 @@ label{
 
 }
 
-input{
+.imput_nav{
+    height: 20px;
     border-style: solid;
     border-color: blue;
     border-width: 2px;
 }
 
 select{
+    height: 28px;
     border-style: solid;
     border-color: blue;
     border-width: 2px;
@@ -29,11 +32,10 @@ select{
     margin: 33.33px;
 }
 
-.button_crear_juego{
+.button_nav{
     width: 100px;
     height: 40px;
     margin: 30px;
-    margin-right: 150px;
     border-style: solid;
     border-color: greenyellow;
     color:greenyellow;
@@ -43,7 +45,7 @@ select{
     transition-duration: 0.8s;
 }
 
-.button_crear_juego:hover{
+.button_nav:hover{
     transition-duration: 0.4s;
     transform: scale(1.1);
     box-shadow: 0 0 15px greenyellow, 0 0 15px greenyellow, 0 0 15px greenyellow;

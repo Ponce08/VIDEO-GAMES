@@ -1,4 +1,4 @@
-import { ALL_GAMES, GAME_BY_ID } from "./action-types";
+import { ALL_GAMES, GAME_BY_ID, GET_GENEROS, POST_GAME } from "./action-types";
 import axios from "axios";
 
 export const getAllGames = (page)=>{
@@ -33,3 +33,37 @@ export const getById = (id)=>{
         }
     }
 };
+
+
+export const postNewGame = (gameData)=>{
+    
+    return async(dispatch)=>{
+        try {
+               const { data } = await axios.post('http://localhost:3001/videogames/post_game', gameData);
+    
+                return dispatch({
+                    type:POST_GAME,
+                    payload: data
+                })
+        } catch (error) {
+            throw Error(error.message)
+        }
+    }
+};
+
+export const getGeneros = ()=>{
+
+    return async(dispatch)=>{
+        try {
+                 const { data } = await axios.get('http://localhost:3001/videogames/genres');
+            
+                return dispatch({
+                    type:GET_GENEROS,
+                    payload: data
+                })
+            
+        } catch (error) {
+            throw Error(error.message)
+        }
+    }
+}

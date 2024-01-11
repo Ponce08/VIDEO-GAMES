@@ -16,12 +16,12 @@ module.exports = (sequelize) => {
     },
 
     description:{
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull:false,
     },
 
     platforms:{
-      type:DataTypes.ARRAY(DataTypes.STRING),
+      type:DataTypes.STRING,
       allowNull:false
     },
 
@@ -34,7 +34,7 @@ module.exports = (sequelize) => {
     },
 
     fecha_De_Lanzamiento:{
-      type:DataTypes.DATE,
+      type:DataTypes.STRING,
       allowNull:false
     },
 

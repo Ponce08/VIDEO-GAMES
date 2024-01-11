@@ -1,8 +1,10 @@
-import { ALL_GAMES, GAME_BY_ID } from "./action-types"
+import { ALL_GAMES, GAME_BY_ID, GET_GENEROS, POST_GAME } from "./action-types"
 
 const initialState = {
     allGames:[],
-    gameID:{}
+    gameID:{},
+    postGames:[],
+    generos:[]
 }
 
 const reducer =(state=initialState, action)=>{
@@ -18,6 +20,19 @@ const reducer =(state=initialState, action)=>{
                 ...state,
                 gameID: action.payload
             };
+
+            case POST_GAME:
+                state.postGames.push(action.payload)
+                return {
+                    ...state,
+                    postGames:[...state.postGames]
+                };
+
+            case GET_GENEROS:
+                return {
+                    ...state,
+                    generos:action.payload
+                }
 
         default:
             return{

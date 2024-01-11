@@ -29,7 +29,7 @@ const DetailGame =()=>{
             <p className="descrip_detail">{description2}</p>
             <h3>Fecha de Lanzamiento: {gameID?.released}</h3>
             <h3>Rating: {gameID?.rating}</h3>
-            <h3>GENRES: {gameID?.genres?.map((genre)=>{return <span key={genre.id}>{genre.name} </span>})}</h3>
+            <h3>GENEROS: {gameID?.genres?.map((genre)=>{return <span key={genre.id}>{genre.name} </span>})}</h3>
         </div>
     )
 };
