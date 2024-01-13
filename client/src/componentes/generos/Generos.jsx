@@ -14,22 +14,22 @@ const Generos = ()=>{
     }, []);
 
     
-    const onSearchGameByGenero = (genero)=>{
-        let gamesFilter = [];
+    // const onSearchGameByGenero = (genero)=>{
+    //     let gamesFilter = [];
         
-            for (let i = 0; i < allgames.length; i++) {
-                for (let j = 0; j < allgames[i].genres.length; j++) {
+    //         for (let i = 0; i < allgames.length; i++) {
+    //             for (let j = 0; j < allgames[i].genres.length; j++) {
        
             
-        }
+    //     }
         
-       }
+    //    }
         
-    }
+    // }
 
     return(
         <div>
-            {generos.map((genero)=>{return <button onClick={onSearchGameByGenero(genero)}>{genero}</button> })}
+            {generos.map((genero)=>{return <button>{genero}</button> })}
         </div>
     )
 };

@@ -15,13 +15,13 @@ const genresBDD = async(req, res)=>{
         const validateGenres = await Genres.findOne({where:{name:'Action'}});
 
         if(!validateGenres){
-            allGenres.map(async(genre)=>{
-               const genress = await Genres.create({
+            const generosBDD = allGenres.map(async(genre)=>{
+                await Genres.create({
                     name:genre
                 })
-                return genress
+                return generosBDD
             })
-            return res.status(200).send('Generos agregados a la base de datos correctamente')
+            return res.status(200).json(generosBDD)
         }
         return res.status(200).send('Base de datos actualizada')
 

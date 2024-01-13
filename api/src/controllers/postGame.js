@@ -1,10 +1,9 @@
-const { Videogame } = require('../db');
+const { Videogame, Genres } = require('../db');
 
 const postGame = async(req, res)=>{
     try {
-        const { name, description, imagen, platforms, fecha_De_Lanzamiento, rating } = req.body;
+        const { name, description, imagen, platforms, fecha_De_Lanzamiento, rating, generosBDD } = req.body;
 
-        if(name && description && imagen && platforms && fecha_De_Lanzamiento && rating){
             const videogame = await Videogame.create({
                 name:name.toLowerCase(), 
                 description, 
@@ -13,10 +12,14 @@ const postGame = async(req, res)=>{
                 fecha_De_Lanzamiento,
                 rating
             })
-            return res.status(200).json(videogame)
-        }
-        return res.status(400).send('faltan datos');
-
+    
+            for (let i = 0; i < generosBDD.length; i++) {
+                let genreName = generosBDD[i];
+                let genreDB = await Genres.finOne({where:{ name:genreName}});
+                if(genreDB){
+                    await videogame.addVideogame(genreDB)
+                }
+            }
     } catch (error) {
         return res.status(500).send(error.message)
     }

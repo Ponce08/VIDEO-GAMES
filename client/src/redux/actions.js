@@ -1,11 +1,11 @@
 import { ALL_GAMES, GAME_BY_ID, GET_GENEROS, POST_GAME } from "./action-types";
 import axios from "axios";
 
-export const getAllGames = (page)=>{
+export const getAllGames = ()=>{
 
     return async(dispatch)=>{
         try {
-            const { data } = await axios.get(`http://localhost:3001/videogames/page_${page}`);
+            const { data } = await axios.get('http://localhost:3001/videogames/page_1');
 
             return dispatch({
                 type:ALL_GAMES,

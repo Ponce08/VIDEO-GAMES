@@ -7,21 +7,26 @@ const { Videogame } = require('../../db');
 
 const gamePage_uno = async(req, res)=>{
     try {
-        
-        // API 
-        const { data } = await axios.get(`${URL}?key=${DB_API_KEY}`)
-        const gamesAPI = data.results.map((game)=>{
-            return {
-                id:game.id,
-                name:game.name,
-                image:game.background_image,
-                genres:game.genres
-            }
-        });
+        let allGames = [];
+        let i = 1;
 
-        const gamesAPI_2 = gamesAPI.slice(0, 15);
+        while (i < 8) {
+            const { data } = await axios.get(`${URL}?key=${DB_API_KEY}&page=${i}`)
+                let j = 0;
+                while (j < 20) {
+                    allGames.push({
+                                id:data.results[j].id,
+                                name:data.results[j].name,
+                                image:data.results[j].background_image,
+                                genres:data.results[j].genres
+                            })
+                    j++
+                }
+            i++
+        }
+        // const gamesAPI_2 = gamesAPI.slice(0, 15);
     
-        return res.status(200).json(gamesAPI_2);
+        return res.status(200).json(allGames);
 
     } catch (error) {
         return res.status(500).send(error.message)

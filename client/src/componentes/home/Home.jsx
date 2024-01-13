@@ -7,33 +7,41 @@ import Navegation from "../navegation/Navegation";
 
 const Home =()=>{
 
-    const [page, setPage] = useState(1)
+    const [inicio, setInicio] = useState(0);
+    const [final, setFinal] = useState(15);
+
     const { allGames } = useSelector((state)=>state);
     const dispatch = useDispatch();
 
 // Control Paginado
+    let gamesAll = allGames.slice(inicio, final);
+
     const previous_page = ()=>{
-        if(page > 1){
-            setPage(page - 1)
+        if(inicio > 0){
+            setInicio(inicio - 15);
+            setFinal(final - 15);
+            gamesAll = allGames.slice(inicio, final);
         }
     };
 
     const next_page = ()=>{
-        if(page < 7){
-            setPage(page + 1)
+        if(final < 105){
+            setInicio(inicio + 15);
+            setFinal(final + 15);
+            gamesAll = allGames.slice(inicio, final);
         }
     };
     
     useEffect(()=>{
-        dispatch(getAllGames(page))
-    }, [page])
+        dispatch(getAllGames())
+    }, [inicio, final])
 
     return(
         <div>
                 <Navegation/>
                 <div className="content_games">
                 {
-                    allGames.map((game)=>{
+                    gamesAll.map((game)=>{
                         return <Games
                             key={game.id}
                             id={game.id}

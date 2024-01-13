@@ -21,25 +21,26 @@
 .content_form{
     background-image: url('./fondo form.jpg');
     background-size: cover;
-    margin: 80px 100px 70px 70px;
-    width: 1200px;
-    height: 400px;
+    margin: 30px 100px 70px 90px;
+    width: 1100px;
+    height: 525px;
     padding: 50px 0 0 0;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     border-style: solid;
     border-color: greenyellow;
     border-width: 2px;
 }
 
 .content_form_1{
-    margin: 50px 50px 0 50px;
+    margin: 50px 20px 0 100px;
     display: flex;
     flex-direction: column;
 }
 
 .content_form_2{
-    margin: 50px 50px 0 50px;
+    margin: 50px 0 0 70px;
     display: flex;
     flex-direction: column;
 }
@@ -56,8 +57,21 @@
     border-width: 2px;
 }
 
+.cont-p{
+    font-family: 'Noto Sans', sans-serif;
+    color: white;
+    display: block;
+    margin: 0 0 0 270px;
+    max-width: 200px;
+}
+
+.p-form{
+    margin: 0;
+    font-size: 12px;
+}
+
 .input_form{
-    margin: 10px 0 20px 0;
+    margin: 10px 0 10px 0;
     height: 25px;
     width: 200px;
     display: inline;
@@ -81,8 +95,32 @@ textarea{
     border-color: blue;
     border-width: 2px;
 }
+
+.content_generos{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    max-width: 500px;
+}
+
+.label_titulo_genero{
+    margin:0 400px 10px 0;
+    height: 50px;
+    color: blue;
+    font-family: 'Rubik Glitch', system-ui;
+    font-family: 'Teko', sans-serif;
+    font-size: 40px;
+}
+
+.label_genero{
+    color:greenyellow;
+    font-family: 'Noto Sans', sans-serif;
+    margin-right: 40px; 
+}
+
 .content_button{
-    margin: 20px 20px 20px 140px;
+    width: 100px;
+    height: 40px;
 }
 
 .button_form{
