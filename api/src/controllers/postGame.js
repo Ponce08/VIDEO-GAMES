@@ -17,7 +17,7 @@ const postGame = async(req, res)=>{
                 let genreName = generosBDD[i];
                 let genreDB = await Genres.finOne({where:{ name:genreName}});
                 if(genreDB){
-                    await videogame.addVideogame(genreDB)
+                    await videogame.addGenres(genreDB)
                 }
             }
     } catch (error) {

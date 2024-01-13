@@ -7,6 +7,7 @@ import Home from './componentes/home/Home';
 import DetailGame from './componentes/detailGame/DetailGame';
 import Form from './componentes/form/Form';
 import Generos from './componentes/generos/Generos';
+import BuscarGame from './componentes/buscarGame/BuscarGame';
 
 
 const App =()=> {
@@ -19,6 +20,7 @@ const App =()=> {
         <Route path='/detail/:id' element={<DetailGame/>}/>
         <Route path='/crear_juego' element={<Form/>}/>
         <Route path='/generos' element={<Generos/>}/>
+        <Route path='/buscar_juego' element={<BuscarGame/>}/>
       </Routes>
     </div>
   )

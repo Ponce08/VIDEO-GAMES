@@ -5,11 +5,15 @@ import { getGeneros, postNewGame } from '../../redux/actions';
 import validate from '../validation/validation';
 
 
+const generosNewGame = [];
 const Form =()=>{
-
+    
+// Hooks y estado global
     const dispatch = useDispatch();
     const { generos } = useSelector((state)=>state);
 
+// Estados locales
+    const [ validation, setValidation ] = useState({});
     const [ gameData, setGameData ] = useState({
         name:'',
         description:'',
@@ -20,8 +24,7 @@ const Form =()=>{
         generosBDD:[]
     });
 
-    const [ validation, setValidation ] = useState({});
-
+// Control de inputs
     const handleChange = (event)=>{
         setGameData({
             ...gameData,
@@ -29,16 +32,28 @@ const Form =()=>{
         });
     };
     
-    const generosNewGame = [];
     const handleGenres = (event)=>{
-        generosNewGame.push(event.target.value)
-        setGameData({
-            ...gameData,
-            generosBDD:generosNewGame
-        })
+        let GENERO = event.target.value
+        let generoEncontrado = generosNewGame.includes(GENERO);
+        if(!generoEncontrado){
+            generosNewGame.push(GENERO)
+            setGameData({
+                ...gameData,
+                generosBDD:generosNewGame
+            })
+        }else{
+            for (let i = 0; i < generosNewGame.length; i++) {
+                if(generosNewGame[i] === GENERO){
+                    generosNewGame.splice(i, 1)
+                    setGameData({
+                        ...gameData,
+                        generosBDD:generosNewGame
+                    })
+                }
+            }
+        }
     };
-    
-    
+
     const handleSubmit = (event) => {
         event.preventDefault();
         
@@ -48,9 +63,9 @@ const Form =()=>{
     };
     
     useEffect(()=>{
-       dispatch(getGeneros())
+        dispatch(getGeneros())
     }, [])
-
+    
     
     useEffect(() => {
         const { name, description, imagen, fecha_De_Lanzamiento, rating } = validate(gameData);
@@ -66,7 +81,7 @@ const Form =()=>{
             setValidation({})
         }
     }, [gameData]);
-
+    
     return(
         <div>
           <form className='content_form' action="" onSubmit={handleSubmit}>

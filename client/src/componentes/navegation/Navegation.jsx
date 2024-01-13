@@ -23,11 +23,9 @@ const Navegation =()=>{
                     <option value="">De la Z-A</option>
                 </select>
             </div>
-
-            <div className='content_search'>
-                <label className='label_nav' htmlFor="">Search🔍</label>
-                <input className='imput_nav' type="text" />
-            </div>
+            <Link to={'/buscar_juego'}>
+                <button className='button_nav'>Buscar Juego🔍</button>
+            </Link>
         </div>
     )
 };

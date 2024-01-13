@@ -7,4 +7,4 @@ nombre.push(['julieta'])
 
 let obj = { nombre: [...nombre]}
 
-console.log(obj);
+console.log(4000 + 4030);

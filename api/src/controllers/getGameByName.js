@@ -26,10 +26,7 @@ const getGameByName = async(req,res)=>{
 
                         const allGameByName = [...gamesAPI, ...gamesBDD]
                         return res.status(200).json(allGameByName);
-                    };
-                    
-                   
-                
+                    };         
     } catch (error) {
         const { name } = req.query;
         return res.status(404).send(`el juego con nombre: ${name} no se encuentra en la base de datos`)
