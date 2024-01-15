@@ -119,6 +119,7 @@ textarea{
 }
 
 .content_button{
+    margin-right: 10px;
     width: 100px;
     height: 40px;
 }

@@ -1,4 +1,4 @@
-import { ALL_GAMES, GAME_BY_ID, GET_GENEROS, POST_GAME } from "./action-types";
+import { ALL_GAMES, GAME_BY_ID, GAME_BY_NAME, GET_GENEROS, ORDER, POST_GAME, STATE_NULL } from "./action-types";
 import axios from "axios";
 
 export const getAllGames = ()=>{
@@ -66,4 +66,36 @@ export const getGeneros = ()=>{
             throw Error(error.message)
         }
     }
-}
+};
+
+export const getGameByName = (name)=>{
+
+    return async(dispatch)=>{
+        try {
+                 const { data } = await axios.get(`http://localhost:3001/videogames?name=${name}`);
+            
+                return dispatch({
+                    type:GAME_BY_NAME,
+                    payload: data
+                })
+            
+        } catch (error) {
+            alert(`¡No hay juegos con nombre: ${name}!`)
+
+        }
+    }
+};
+
+export const stateNull = ()=>{
+    return (dispatch)=>{
+        return dispatch({
+            type:STATE_NULL,
+            payload:{}
+        })
+    }
+};
+
+export const order = (orderName)=>{
+    return { type: ORDER, payload:orderName }
+
+};

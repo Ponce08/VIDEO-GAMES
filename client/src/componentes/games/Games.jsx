@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import './games.css';
 
-const Games = ({id, name, image, genres})=>{
+const Games = ({id, name, image, genres, rating})=>{
     return(
         <div className="content_game">
             <h3 className='titulo_game'>{name}</h3>
@@ -10,6 +10,7 @@ const Games = ({id, name, image, genres})=>{
             </Link>
             <div className='content_titulo_genres'>
                 <span className='titulo_genres'>GENEROS: {genres}</span>
+                <span className='titulo_genres'>Rating: <h4 className="rating_item">{rating}</h4></span>
             </div>
         </div>
     )

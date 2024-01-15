@@ -18,13 +18,13 @@ const gamePage_uno = async(req, res)=>{
                                 id:data.results[j].id,
                                 name:data.results[j].name,
                                 image:data.results[j].background_image,
-                                genres:data.results[j].genres
+                                genres:data.results[j].genres,
+                                rating:data.results[j].rating
                             })
                     j++
                 }
             i++
         }
-        // const gamesAPI_2 = gamesAPI.slice(0, 15);
     
         return res.status(200).json(allGames);
 

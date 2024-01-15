@@ -2,9 +2,10 @@ let nombre = [{name:"The Witcher 3: Wild Hunt", apellido:'ponce1'},
                 {name:"Exceptional", apellido:'ponce2'}, 
                 {name:"Nintendo Switch", apellido:'ponce3'} ]
 
-nombre.push('ponce')
-nombre.push(['julieta'])
 
-let obj = { nombre: [...nombre]}
 
-console.log(4000 + 4030);
+let obj = nombre.sort((a, b)=>{
+    if(a.name < b.name) return -1
+})
+
+console.log(nombre);

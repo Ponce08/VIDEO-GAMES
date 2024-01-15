@@ -34,7 +34,7 @@
 
 .content_titulo_genres{
     display: flex;
-    flex-direction: column;
+    justify-content: center;
 }
 
 .titulo_genres{
@@ -44,4 +44,9 @@
     font-size: 20px;
     margin: 0 10px;
     
+}
+
+.rating_item{
+    margin: 3px 10px;
+    color: white;
 }

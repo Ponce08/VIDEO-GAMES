@@ -1,5 +1,8 @@
 .label_nav{
-    /* width: 200px; */
+    text-align: center;
+    display: inline-block;
+    width: 100px;
+    height: 26px;
     border-style: solid;
     border-color: greenyellow;
     color:greenyellow;
@@ -9,13 +12,13 @@
 }
 
 .imput_nav{
-    height: 20px;
+    height: 26px;
     border-style: solid;
     border-color: blue;
     border-width: 2px;
 }
 
-select{
+.select_nav{
     height: 28px;
     border-style: solid;
     border-color: blue;
@@ -44,6 +47,47 @@ select{
     cursor: pointer;
     transition-duration: 0.8s;
 }
+
+.button_nav_home{
+    height: 30px;
+    width: 70px;
+    font-size: 15px;
+    margin-left: 20px;
+    border-style: solid;
+    border-color: greenyellow;
+    color:greenyellow;
+    font-family: 'Noto Sans', sans-serif;
+    border-width: 2px;
+    background:none;
+    cursor: pointer;
+    transition-duration: 0.8s;
+}
+
+.button_nav_home:hover{
+    transition-duration: 0.4s;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px greenyellow, 0 0 15px greenyellow, 0 0 15px greenyellow;
+    font-weight: bold;
+}
+
+.button2_nav{
+    border-style: solid;
+    border-color: greenyellow;
+    color:greenyellow;
+    font-family: 'Noto Sans', sans-serif;
+    border-width: 2px;
+    background:none;
+    cursor: pointer;
+    transition-duration: 0.8s;
+}
+
+.button2_nav:hover{
+    transition-duration: 0.4s;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px greenyellow, 0 0 15px greenyellow, 0 0 15px greenyellow;
+    font-weight: bold;
+}
+
 
 .button_nav:hover{
     transition-duration: 0.4s;

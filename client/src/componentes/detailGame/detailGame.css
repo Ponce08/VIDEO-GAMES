@@ -1,12 +1,66 @@
 .content_detail{
-    color: white;
-}
-
-.plataformas{
-    color: white;
+    display: flex;
 }
 
 .image_detail{
-    width: 1000px;
-    margin: 30px 0 0 170px;
+    width: 700px;
+    height: 500px;
+    margin: 30px 20px 20px 30px;
+    border-style: solid;
+    border-color: greenyellow;
+    border-width: 3px;
+}
+
+.content_img_descrip{
+    display: flex;
+    align-content: center;
+}
+
+.name_detail{
+    font-family: 'Rubik Glitch', system-ui;
+    font-family: 'Teko', sans-serif;
+    font-size: 100px;
+    color: blue;
+    line-height: 75px;
+    margin: 20px 0 50px 10px;
+}
+
+.span_detail{
+    font-family: 'Rubik Glitch', system-ui;
+    font-family: 'Teko', sans-serif;
+    color: greenyellow;
+    font-size: 40px;
+}
+
+
+.h3_detail{
+    font-family: 'Rubik Glitch', system-ui;
+    font-family: 'Teko', sans-serif;
+    color: white;
+    font-size: 40px;
+    margin:0 0 0 10px
+}
+
+.span_genre{
+    margin-right: 30px;
+}
+.span_platform{
+    display: inline-block;
+    height: 40px;
+    margin: 0 30px 0 0;
+}
+
+.descrip_detail{
+    font-family: 'Rubik Glitch', system-ui;
+    font-family: 'Teko', sans-serif;
+    color: white;
+    font-size: 20px;
+    margin: 10px 20px 20px 20px;
+    text-align: justify;
+}
+
+.content_information{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
 }

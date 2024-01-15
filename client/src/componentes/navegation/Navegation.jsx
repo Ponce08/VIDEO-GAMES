@@ -1,31 +1,20 @@
-import { Link } from 'react-router-dom';
 import './navegation.css'
 
-const Navegation =()=>{
+const Navegation =({crear_juego, generos, ordenar, buscar_juego, input_search, button_home})=>{
     return(
         <div className='content_nav'>
-            <Link to={'/crear_juego'}>
-                <button className='button_nav'>Crear Juego</button>
-            </Link>
+           
+            {crear_juego}
 
-            <Link to={'/generos'}>
-                <button className='button_nav'>Generos</button>
-            </Link>
+            {input_search}
+            {button_home}
 
-            <div className='content_filtros'>
-                <label className='label_nav' htmlFor="">Ordenar</label>
-                <select name="" id="">
-                    <option value=""></option>
-                    <option value="">Todos los juegos</option>
-                    <option value="">Mayor Rating</option>
-                    <option value="">Menor Rating</option>
-                    <option value="">De la A-Z</option>
-                    <option value="">De la Z-A</option>
-                </select>
-            </div>
-            <Link to={'/buscar_juego'}>
-                <button className='button_nav'>Buscar Juego🔍</button>
-            </Link>
+            {generos}
+
+            {ordenar}
+
+            {buscar_juego}
+
         </div>
     )
 };

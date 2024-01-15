@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import './form.css';
 import { getGeneros, postNewGame } from '../../redux/actions';
 import validate from '../validation/validation';
+import { Link } from 'react-router-dom';
 
 
 const generosNewGame = [];
@@ -133,6 +134,8 @@ const Form =()=>{
                 </div>
             </div>
                     <div className='content_button'><button className='button_form' type='submit' disabled={!gameData.name || !gameData.description || !gameData.imagen || !gameData.fecha_De_Lanzamiento || !gameData.rating}>SUBMIT</button></div>
+                    <Link to={'/home'}><div className='content_button'><button className='button_form' type='text'>Home</button></div></Link>
+
           </form>
         </div>
     )
