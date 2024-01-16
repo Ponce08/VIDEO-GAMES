@@ -48,12 +48,8 @@ const Home =()=>{
                     crear_juego={ <Link to={'/crear_juego'}>
                                     <button className='button_nav'>Crear Juego</button>
                                   </Link>}
-                    generos={
-                        <Link to={'/generos'}>
-                            <button className='button_nav'>Generos</button>
-                        </Link>}
                     ordenar={      <div className='content_filtros'>
-                                    <label className='label_nav' htmlFor="">Ordenar</label>
+                                    <label className='label_nav'>Ordenar</label>
                                         <select className='select_nav' onChange={handleOrder}>
                                             <option value=""></option>
                                             <option value="Mayor Rating">Mayor Rating</option>

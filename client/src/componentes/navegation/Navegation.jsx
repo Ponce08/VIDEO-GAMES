@@ -1,15 +1,16 @@
 import './navegation.css'
 
-const Navegation =({crear_juego, generos, ordenar, buscar_juego, input_search, button_home})=>{
+const Navegation =({crear_juego, ordenar, buscar_juego, input_search, button_home, generosBDD})=>{
     return(
         <div className='content_nav'>
            
             {crear_juego}
-
+            
             {input_search}
             {button_home}
-
-            {generos}
+                
+            {generosBDD}
+            
 
             {ordenar}
 

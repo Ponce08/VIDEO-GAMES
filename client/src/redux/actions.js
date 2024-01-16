@@ -1,11 +1,11 @@
-import { ALL_GAMES, GAME_BY_ID, GAME_BY_NAME, GET_GENEROS, ORDER, POST_GAME, STATE_NULL } from "./action-types";
+import { ALL_GAMES, GAME_BY_GENERO, GAME_BY_ID, GAME_BY_NAME, GET_GENEROS, ORDER, POST_GAME, STATE_NULL } from "./action-types";
 import axios from "axios";
 
 export const getAllGames = ()=>{
 
     return async(dispatch)=>{
         try {
-            const { data } = await axios.get('http://localhost:3001/videogames/page_1');
+            const { data } = await axios.get('http://localhost:3001/videogames');
 
             return dispatch({
                 type:ALL_GAMES,
@@ -22,12 +22,12 @@ export const getById = (id)=>{
 
     return async(dispatch)=>{
         try {
-            const { data } = await axios.get(`http://localhost:3001/videogames/${id}`);
+                const { data } = await axios.get(`http://localhost:3001/videogames/${id}`);
 
-            return dispatch({
-                type:GAME_BY_ID,
-                payload: data
-            })
+                return dispatch({
+                    type:GAME_BY_ID,
+                    payload: data
+                })
         } catch (error) {
             throw Error(error.message)
         }
@@ -99,3 +99,8 @@ export const order = (orderName)=>{
     return { type: ORDER, payload:orderName }
 
 };
+
+export const gamesByGeneros = (genero)=>{
+    return { type: GAME_BY_GENERO, payload:genero }
+    
+}

@@ -7,7 +7,7 @@ const { Genres } = require('../db');
 
 const genresBDD = async(req, res)=>{
     try {
-        const { data } = await axios(`${URL}?key=${DB_API_KEY}`);
+        const { data } = await axios.get(`${URL}?key=${DB_API_KEY}`);
         const allGenres = data.results.map((genre)=>{
             return genre.name
         });
@@ -21,7 +21,7 @@ const genresBDD = async(req, res)=>{
                 })
                 return generosBDD
             })
-            return res.status(200).json(generosBDD)
+            return res.status(200).json(allGenres)
         }
         return res.status(200).send('Base de datos actualizada')
 

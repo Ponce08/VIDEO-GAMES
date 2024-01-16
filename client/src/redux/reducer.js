@@ -1,4 +1,4 @@
-import { ALL_GAMES, GAME_BY_ID, GAME_BY_NAME, GET_GENEROS, ORDER, POST_GAME, STATE_NULL } from "./action-types"
+import { ALL_GAMES, GAME_BY_GENERO, GAME_BY_ID, GAME_BY_NAME, GET_GENEROS, ORDER, POST_GAME, STATE_NULL } from "./action-types"
 
 const initialState = {
     allGames:[],
@@ -74,6 +74,21 @@ const reducer =(state=initialState, action)=>{
                     allGames: gamesOrdered_rating
                 }
             };
+
+        case GAME_BY_GENERO:
+                let arrayGamesGeneros = [];
+                let stateGames = state.allGames
+                for (let i = 0; i < stateGames.length; i++) {
+                    for (let j = 0; j < stateGames[i].genres.length; j++) {
+                    if(stateGames[i].genres[j].name === action.payload){
+                        arrayGamesGeneros.push(stateGames[i])
+                    }
+                }
+            }
+            return {
+                ...state,
+                gamesNames:arrayGamesGeneros
+            }
    
         default:
             return{

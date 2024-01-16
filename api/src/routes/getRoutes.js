@@ -1,29 +1,22 @@
 const { Router } = require('express');
 const getById = require('../controllers/getById');
 const getGenres = require('../controllers/getGenres');
-const genresBDD = require('../controllers/genresBDD');
 const getGameByName = require('../controllers/getGameByName');
-const gamePage_uno = require('../controllers/allPagesGames/page_1');
-const gamePage_siete = require('../controllers/allPagesGames/page_7');
-const getGamesBDD = require('../controllers/getGamesBDD');
-const getGenresBDD = require('../controllers/getGenresBDD');
+const getAllGames = require('../controllers/allGames');
+const genresBDD = require('../controllers/genresBDD');
 const getRout = Router();
 
 
-// paginado de todos los juegos
-getRout.get('/page_1', gamePage_uno);
-getRout.get('/page_5', gamePage_siete);
-
-// rutas para relacion de tablas
-getRout.get('/games_bdd', getGamesBDD);
-getRout.get('/genres_bdd', getGenresBDD);
-
+// todos los juegos
+getRout.get('/', getAllGames);
 
 // rutas generales
 getRout.get('/genres', getGenres);
-getRout.get('/genres_post', genresBDD);
 getRout.get('/', getGameByName);
 getRout.get('/:id', getById);
+
+// ruta para agregar los generos a la BDD
+getRout.get('/genres_post', genresBDD);
 
 
 module.exports = getRout

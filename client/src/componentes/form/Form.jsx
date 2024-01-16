@@ -61,6 +61,8 @@ const Form =()=>{
         dispatch(postNewGame(gameData))
         
         alert('JUEGO CREADO CORECTAMENTE')
+
+        setGameData({})
     };
     
     useEffect(()=>{

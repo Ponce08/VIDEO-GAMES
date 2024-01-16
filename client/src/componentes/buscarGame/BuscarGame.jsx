@@ -1,16 +1,17 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Navegation from '../navegation/Navegation';
 import './buscarGame.css'
 import Games from '../games/Games';
-import { getGameByName } from '../../redux/actions';
+import { gamesByGeneros, getGameByName, getGeneros } from '../../redux/actions';
 import { Link } from 'react-router-dom';
 
 
 const BuscarGame = ()=>{
 
     const [gameName, setGameName] = useState('');
-    const { gamesNames } = useSelector((state)=>state);
+
+    const { gamesNames, generos } = useSelector((state)=>state);
     const dispatch = useDispatch();
 
     let gamesfind = gamesNames.slice(0, 15);
@@ -19,13 +20,31 @@ const BuscarGame = ()=>{
         setGameName(event.target.value)
     };
 
+    const handleChange2 = (event)=>{
+        dispatch(gamesByGeneros(event.target.value))
+    };
+
+    useEffect(()=>{
+        dispatch(getGeneros())
+    }, []);
+
     return(
         <div>
             <Navegation
-                input_search={<div className='content_filtros'>
-                                <button className='button2_nav' onClick={()=>dispatch(getGameByName(gameName))}>Search🔍</button>
-                                <input className='imput_nav' type="search" name='name' value={gameName} onChange={handleChange}/>
-                                <Link to={'/home'}><button className='button_nav_home'>Home</button></Link>
+                input_search={<div className='content_filtros2'>
+                                <div className='content_search_genres'>
+                                    <div className='content_search2'>
+                                        <button className='button2_nav' onClick={()=>dispatch(getGameByName(gameName))}>Search🔍</button>
+                                        <input className='imput_nav' type="search" name='name' value={gameName} onChange={handleChange}/>
+                                        <Link to={'/home'}><button className='button_nav_home'>Home</button></Link>
+                                    </div>
+                                    <div>
+                                        <label className='label_nav'>Generos</label>
+                                        <select  className='select_nav' onChange={handleChange2}>
+                                            {generos.map((genero)=>{return  <option value={genero.name} >{genero.name}</option>})}
+                                        </select>
+                                    </div>
+                                </div>
                             </div>}
             />
             <div className='content_games'>
