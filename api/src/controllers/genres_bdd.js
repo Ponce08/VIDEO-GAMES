@@ -5,7 +5,7 @@ const URL = 'https://api.rawg.io/api/genres'
 const { Genres } = require('../db');
 
 
-const genresBDD = async(req, res)=>{
+const genres_bdd = async(req, res)=>{
     try {
         const { data } = await axios.get(`${URL}?key=${DB_API_KEY}`);
         const allGenres = data.results.map((genre)=>{
@@ -30,4 +30,4 @@ const genresBDD = async(req, res)=>{
     }
 };
 
-module.exports = genresBDD;
+module.exports = genres_bdd;
