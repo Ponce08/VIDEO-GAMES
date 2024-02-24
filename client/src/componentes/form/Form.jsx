@@ -62,7 +62,7 @@ const Form =()=>{
         
         alert('JUEGO CREADO CORECTAMENTE')
 
-        setGameData({})
+        setGameData('')
     };
     
     useEffect(()=>{
@@ -70,20 +70,20 @@ const Form =()=>{
     }, [])
     
     
-    useEffect(() => {
-        const { name, description, imagen, fecha_De_Lanzamiento, rating } = validate(gameData);
-        if(gameData.name !== '' || gameData.description !== '' || gameData.imagen !== '' || gameData.fecha_De_Lanzamiento !== '' || gameData.rating !== ''){
-            setValidation({
-                name: name,
-                description:description,
-                imagen:imagen,
-                fecha_De_Lanzamiento:fecha_De_Lanzamiento,
-                rating:rating,
-            })
-        }else{
-            setValidation({})
-        }
-    }, [gameData]);
+    // useEffect(() => {
+    //     const { name, description, imagen, fecha_De_Lanzamiento, rating } = validate(gameData);
+    //     if(gameData.name !== '' || gameData.description !== '' || gameData.imagen !== '' || gameData.fecha_De_Lanzamiento !== '' || gameData.rating !== ''){
+    //         setValidation({
+    //             name: name,
+    //             description:description,
+    //             imagen:imagen,
+    //             fecha_De_Lanzamiento:fecha_De_Lanzamiento,
+    //             rating:rating,
+    //         })
+    //     }else{
+    //         setValidation({})
+    //     }
+    // }, [gameData]);
     
     return(
         <div>
@@ -132,7 +132,6 @@ const Form =()=>{
                                                         <input className='input_genero' type="checkbox" name='generos' value={`${genero.name}`} onChange={handleGenres}/>
                                                         <label className='label_genero' htmlFor="generos">{genero.name}</label>
                                                    </div>})}
-
                 </div>
             </div>
                     <div className='content_button'><button className='button_form' type='submit' disabled={!gameData.name || !gameData.description || !gameData.imagen || !gameData.fecha_De_Lanzamiento || !gameData.rating}>SUBMIT</button></div>

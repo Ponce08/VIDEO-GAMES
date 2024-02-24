@@ -7,7 +7,7 @@ const Welcome =()=>{
 
     const añadirGenerosBDD = async()=>{
         try {
-            await axios.get('http://localhost:3001/videogames/post_genres')
+            await axios.post('http://localhost:3001/videogames/post_genres')
         } catch (error) {
             throw Error(error.message)
         }

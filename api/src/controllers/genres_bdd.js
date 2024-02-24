@@ -31,3 +31,5 @@ const genres_bdd = async(req, res)=>{
 };
 
 module.exports = genres_bdd;
+
+console.log(module.exports);

@@ -32,7 +32,7 @@ let gamesAll = allGames.slice(inicio, final)
         };
 
         const next_page = ()=>{
-            if(final < 105){
+            if(final < 150){
                 setInicio(inicio + 15);
                 setFinal(final + 15);
                 setNumberPage2(numeberPage2 + 1)
